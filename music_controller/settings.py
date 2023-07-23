@@ -59,13 +59,6 @@ CORS_ALLOWED_ORIGINS = [
 
 CORS_ALLOW_CREDENTIALS = True
 
-SESSION_COOKIE_SECURE = False
-
-SESSION_COOKIE_HTTPONLY = False
-
-SESSION_COOKIE_DOMAIN = ".music-party-controller.netlify.app"
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
