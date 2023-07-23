@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-=5@^8n5yqe_*jvv!y&up5!s_3tqw5w3l+q1((&54d074ms_vut
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
     "http://localhost:5173",
+    "https://music-party-controller.netlify.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
