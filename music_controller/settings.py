@@ -63,7 +63,7 @@ SESSION_COOKIE_SECURE = False
 
 SESSION_COOKIE_HTTPONLY = False
 
-SESSION_COOKIE_DOMAIN = ".netlify.app"
+SESSION_COOKIE_DOMAIN = ".music-party-controller.netlify.app"
 
 
 
