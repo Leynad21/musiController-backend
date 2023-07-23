@@ -17,7 +17,6 @@ BASE_URL = "https://api.spotify.com/v1/me/"
 
 def get_user_tokens(session_id):
     user_tokens = SpotifyToken.objects.filter(user=session_id)
-    print("get_user_tokens: ", user_tokens)
     if user_tokens.exists():
         return user_tokens[0]
     else:
@@ -25,7 +24,6 @@ def get_user_tokens(session_id):
 
 
 def update_or_create_user_tokens(session_id, access_token, token_type, expires_in, refresh_token):
-    print("udporcreate: ", session_id, access_token, token_type, expires_in, refresh_token)
     tokens = get_user_tokens(session_id)
     expires_in = timezone.now() + timedelta(seconds=expires_in)
 
@@ -85,7 +83,6 @@ def execute_spotify_api_request(session_id, endpoint, post_=False, put_=False):
     else:
         response = get(BASE_URL + endpoint, {}, headers=headers)
 
-    print(response)
     try:
         return response.json()
     except:

@@ -53,7 +53,7 @@ def spotify_callback(request, format=None):
     update_or_create_user_tokens(
         request.session.session_key, access_token, token_type, expires_in, refresh_token)
 
-    return redirect('http://127.0.0.1:5173/')
+    return redirect('https://music-party-controller.netlify.app/') #modified here
 
 
 class IsAuthenticated(APIView):
@@ -66,7 +66,6 @@ class CurrentSong(APIView):
     def get(self, request, format=None):
         room_code = self.request.session.get('room_code')
         room = Room.objects.filter(code=room_code)
-        print("roo_codem in view: ", room_code)
         if room.exists():
             room = room[0]
         else:

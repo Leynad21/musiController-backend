@@ -64,11 +64,8 @@ class CreateRoomView(APIView):
     serializer_class = CreateRoomSerializer
 
     def post(self, request, format=None):
-        
-        # session_data = {}
-        # for key, value in request.session.items():
-        #     session_data[key] = value
-        # print("session:", session_data)
+
+        print("get session key: ", self.request.session.session_key)
 
         if not self.request.session.exists(self.request.session.session_key):
             self.request.session.create()
@@ -111,7 +108,6 @@ class UserInRoom(APIView):
         data = {
             'code': self.request.session.get('room_code')
         }
-        print(data)
 
         return JsonResponse(data, status= status.HTTP_200_OK)
     
